@@ -5,6 +5,7 @@ import './App.css'
 import Banner from '../components/Banner/Banner'
 import InventoryItem from '../components/InventoryItem/InventoryItem'
 import SpecialItems from '../components/SpecialItems/SpecialItems'
+import Footer from '../components/Footer/Footer'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <Footer />
     </div>
   )
 }
