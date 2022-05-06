@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../img/BIG_STORE.png";
 
 const Home = () => {
   return (
     <div>
       <nav
-        class="
+        className="
 relative
 w-full
 flex flex-wrap
@@ -20,9 +21,9 @@ shadow-lg
 navbar navbar-expand-lg navbar-light
 "
       >
-        <div class="container-fluid w-full flex flex-wrap items-center justify-between px-6">
+        <div className="container-fluid w-full flex flex-wrap items-center justify-between px-6">
           <button
-            class="
+            className="
     navbar-toggler
     text-gray-500
     border-0
@@ -44,7 +45,7 @@ navbar navbar-expand-lg navbar-light
               focusable="false"
               data-prefix="fas"
               data-icon="bars"
-              class="w-6"
+              className="w-6"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
@@ -56,36 +57,39 @@ navbar navbar-expand-lg navbar-light
             </svg>
           </button>
           <div
-            class="collapse navbar-collapse flex-grow items-center"
+            className="collapse navbar-collapse flex-grow items-center"
             id="navbarSupportedContent"
           >
-            <a class="text-xl text-black" href="#">
+            <a className="text-xl text-black" href="#">
               <img className="h-[60px]" src={logo} alt="" />
             </a>
-            <ul class="navbar-nav flex flex-col pl-0 list-style-none ml-auto">
-              <li class="nav-item px-2">
-                <a class="nav-link active" aria-current="page" href="#">
+            <ul className="navbar-nav flex flex-col pl-0 list-style-none ml-auto">
+              <li className="nav-item px-2">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+                <a className="nav-link active" aria-current="page" href="#">
                   Home
                 </a>
               </li>
-              <li class="nav-item pr-2">
+              <li className="nav-item pr-2">
                 <a
-                  class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   href="#"
                 >
                   Features
                 </a>
               </li>
-              <li class="nav-item pr-2">
+              <li className="nav-item pr-2">
                 <a
-                  class="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
+                  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
                   href="#"
                 >
                   Pricing
                 </a>
               </li>
-              <li class="nav-item pr-2">
-                <a class="nav-link disabled text-gray-300 p-0">Disabled</a>
+              <li className="nav-item pr-2">
+                <a className="nav-link disabled text-gray-300 p-0">Disabled</a>
               </li>
             </ul>
           </div>
