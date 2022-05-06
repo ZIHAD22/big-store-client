@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import CustomLink from "../CustomLink/CustomLink";
 import logo from "../../img/BIG_STORE.png";
 
 const Home = () => {
@@ -65,31 +65,24 @@ navbar navbar-expand-lg navbar-light
             </a>
             <ul className="navbar-nav flex flex-col pl-0 list-style-none ml-auto">
               <li className="nav-item px-2">
-                <Link className="nav-link" to="/">
+                <CustomLink className="nav-link" to="/">
                   Home
-                </Link>
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
+                </CustomLink>
               </li>
               <li className="nav-item pr-2">
-                <a
-                  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                  href="#"
-                >
-                  Features
-                </a>
+                <CustomLink className="nav-link" to="/manage-items">
+                  Manage Items
+                </CustomLink>
               </li>
               <li className="nav-item pr-2">
-                <a
-                  className="nav-link text-gray-500 hover:text-gray-700 focus:text-gray-700 p-0"
-                  href="#"
-                >
-                  Pricing
-                </a>
+                <CustomLink className="nav-link" to="/add-items">
+                  Add Item
+                </CustomLink>
               </li>
               <li className="nav-item pr-2">
-                <a className="nav-link disabled text-gray-300 p-0">Disabled</a>
+                <CustomLink className="nav-link" to="/my-items">
+                  My items
+                </CustomLink>
               </li>
             </ul>
           </div>
