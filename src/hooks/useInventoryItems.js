@@ -5,7 +5,7 @@ const useInventoryItem = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    axios.get('InventoryItem.json').then((res) => {
+    axios.get('http://localhost:5000/products-home').then((res) => {
       const { data } = res
       setItems(data)
     })

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../fireBase.init";
@@ -9,6 +9,10 @@ import { async } from "@firebase/util";
 import { toast } from "react-toastify";
 
 const SignIn = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+
+  let from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -29,6 +33,10 @@ const SignIn = () => {
 
   if (signInLoading) {
     return <Loading />;
+  }
+
+  if (signInUser) {
+    navigate(from, { replace: true });
   }
 
   return (

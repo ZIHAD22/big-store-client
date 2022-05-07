@@ -12,6 +12,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Loading from '../components/Loading/Loading'
 import RequireAuth from '../components/RequireAuth/RequireAuth'
+import Inventory from '../components/Inventory/Inventory'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
@@ -32,6 +33,14 @@ function App() {
         <Route path="/manage-items" element={<Loading />} />
         <Route path="/signUp" element={<Registration />} />
         <Route path="/signIn" element={<SignIn />} />
+        <Route
+          path="/inventory/:id"
+          element={
+            <RequireAuth>
+              <Inventory />
+            </RequireAuth>
+          }
+        />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

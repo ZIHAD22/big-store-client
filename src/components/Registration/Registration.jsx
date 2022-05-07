@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../fireBase.init";
@@ -8,6 +8,10 @@ import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
 
 const Registration = () => {
+  let navigate = useNavigate();
+  let location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
   const {
     register,
     handleSubmit,
@@ -34,6 +38,10 @@ const Registration = () => {
 
   if (signUpLoading) {
     return <Loading />;
+  }
+
+  if (signUpUser) {
+    navigate(from, { replace: true });
   }
 
   return (
@@ -134,7 +142,7 @@ const Registration = () => {
                     name="agree"
                     {...register("agree", { required: "Required" })}
                     id="agree"
-                  />{" "}
+                  />
                   <span className="font-serif">
                     Accept All Trams and Condition ?
                   </span>
