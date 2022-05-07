@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Registration = () => {
@@ -57,6 +58,17 @@ const Registration = () => {
                 placeholder="Confirm Password"
               />
             </div>
+            <div className="grid grid-cols-2 mt-4 items-center">
+              <div>
+                <input className="" type="checkbox" name="" id="" />{" "}
+                <span className="font-serif">
+                  Accept All Trams and Condition ?
+                </span>
+              </div>
+              <div className="text-blue-900 hover:underline">
+                <Link to="/signUp">Already Registered ?</Link>
+              </div>
+            </div>
 
             <div className="text-center mt-5">
               <button
@@ -66,7 +78,6 @@ const Registration = () => {
                 Registration
               </button>
             </div>
-
             {/* social login */}
             <SocialLogin />
           </div>
