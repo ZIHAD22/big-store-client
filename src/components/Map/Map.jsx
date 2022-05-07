@@ -39,7 +39,8 @@ const Map = () => {
                   />
                   <Marker position={position}>
                     <Popup>
-                      A pretty CSS3 popup. <br /> Easily customizable.
+                      BIG STORE <br /> For Best and good qulitey croseriys Found
+                      Here
                     </Popup>
                   </Marker>
                 </MapContainer>
