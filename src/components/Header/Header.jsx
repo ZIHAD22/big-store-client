@@ -2,6 +2,7 @@ import React from "react";
 import CustomLink from "../CustomLink/CustomLink";
 import logo from "../../img/BIG_STORE.png";
 import "./Header.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -61,9 +62,9 @@ navbar navbar-expand-lg navbar-light
             className="collapse navbar-collapse flex-grow items-center"
             id="navbarSupportedContent"
           >
-            <a className="text-xl text-black" href="#">
+            <Link to="/">
               <img className="h-[60px]" src={logo} alt="" />
-            </a>
+            </Link>
             <ul className="navbar-nav flex flex-col pl-0 list-style-none ml-auto">
               <li className="nav-item px-2">
                 <CustomLink className="nav-link" to="/">
@@ -88,7 +89,7 @@ navbar navbar-expand-lg navbar-light
               <li className="nav-item pr-2 text-white">
                 <CustomLink
                   className=" bg-orange-400 nav-btn font-semibold px-5 py-3 rounded-lg"
-                  to="/signUp"
+                  to="/signIn"
                 >
                   Sign in
                 </CustomLink>

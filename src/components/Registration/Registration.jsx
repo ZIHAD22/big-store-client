@@ -7,7 +7,7 @@ const Registration = () => {
     <div className="bg-registration-img h-screen bg-center bg-cover">
       <div className="opacity-90 bg-white h-full">
         <form action="">
-          <h1 className="text-4xl font-serif font-sans text-center">
+          <h1 className="text-4xl pt-1 font-serif font-sans text-center">
             Great to see you here!
           </h1>
           <div className="w-1/2 mx-auto mt-10">
@@ -66,7 +66,7 @@ const Registration = () => {
                 </span>
               </div>
               <div className="text-blue-900 hover:underline">
-                <Link to="/signUp">Already Registered ?</Link>
+                <Link to="/signIn">Already Registered ?</Link>
               </div>
             </div>
 
