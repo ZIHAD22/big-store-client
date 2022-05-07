@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'banner-img':
-          "url('https://img.freepik.com/free-photo/flat-lay-assortment-vegetables_23-2148853350.jpg?t=st=1651847925~exp=1651848525~hmac=292128c1627fdbb50d99cc17d1f3ce97fa1e920e588c3b7e303aa2076f85cfc2&w=900')",
+          "url('https://img.freepik.com/free-vector/father-son-buying-food-supermarket_74855-5245.jpg?t=st=1651866848~exp=1651867448~hmac=66a30102a665748cb2500187de5bfa488b953a81360d59ed681073017086e9e7&w=1380')",
         'footer-texture': "url('/img/footer-texture.png')",
       },
       gridTemplateColumns: {

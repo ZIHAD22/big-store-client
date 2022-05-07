@@ -3,9 +3,10 @@ import NotFound from '../components/NotFound/NotFound'
 import Header from '../components/Header/Header'
 import './App.css'
 import Banner from '../components/Banner/Banner'
-import InventoryItem from '../components/InventoryItem/InventoryItem'
 import SpecialItems from '../components/SpecialItems/SpecialItems'
 import Footer from '../components/Footer/Footer'
+import Map from '../components/Map/Map'
+// import 'leaflet/dist/leaflet.css'
 
 function App() {
   return (
@@ -18,10 +19,12 @@ function App() {
             <>
               <Banner />
               <SpecialItems />
+              <Map />
             </>
           }
         />
         <Route path="*" element={<NotFound />} />
+        <Route path="/manage-items" element={<Map />} />
       </Routes>
       <Footer />
     </div>
