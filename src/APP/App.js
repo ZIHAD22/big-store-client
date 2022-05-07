@@ -6,6 +6,7 @@ import Banner from '../components/Banner/Banner'
 import SpecialItems from '../components/SpecialItems/SpecialItems'
 import Footer from '../components/Footer/Footer'
 import Map from '../components/Map/Map'
+import Registration from '../components/Registration/Registration'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
@@ -23,8 +24,9 @@ function App() {
             </>
           }
         />
-        <Route path="*" element={<NotFound />} />
         <Route path="/manage-items" element={<Map />} />
+        <Route path="/signUp" element={<Registration />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

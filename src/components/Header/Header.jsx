@@ -1,6 +1,7 @@
 import React from "react";
 import CustomLink from "../CustomLink/CustomLink";
 import logo from "../../img/BIG_STORE.png";
+import "./Header.css";
 
 const Home = () => {
   return (
@@ -82,6 +83,14 @@ navbar navbar-expand-lg navbar-light
               <li className="nav-item pr-2">
                 <CustomLink className="nav-link" to="/my-items">
                   My items
+                </CustomLink>
+              </li>
+              <li className="nav-item pr-2 text-white">
+                <CustomLink
+                  className=" bg-orange-400 nav-btn font-semibold px-5 py-3 rounded-lg"
+                  to="/signUp"
+                >
+                  Sign in
                 </CustomLink>
               </li>
             </ul>
