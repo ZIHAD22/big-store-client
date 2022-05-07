@@ -80,19 +80,28 @@ navbar navbar-expand-lg navbar-light
                   Home
                 </CustomLink>
               </li>
-              <li className="nav-item pr-2">
-                <CustomLink className="nav-link" to="/manage-items">
-                  Manage Items
-                </CustomLink>
-              </li>
-              <li className="nav-item pr-2">
-                <CustomLink className="nav-link" to="/add-items">
-                  Add Item
-                </CustomLink>
-              </li>
-              <li className="nav-item pr-2">
-                <CustomLink className="nav-link" to="/my-items">
-                  My items
+              {user?.uid && (
+                <>
+                  <li className="nav-item pr-2">
+                    <CustomLink className="nav-link" to="/manage-items">
+                      Manage Items
+                    </CustomLink>
+                  </li>
+                  <li className="nav-item pr-2">
+                    <CustomLink className="nav-link" to="/add-items">
+                      Add Item
+                    </CustomLink>
+                  </li>
+                  <li className="nav-item pr-2">
+                    <CustomLink className="nav-link" to="/my-items">
+                      My items
+                    </CustomLink>
+                  </li>
+                </>
+              )}
+              <li className="nav-item px-2">
+                <CustomLink className="nav-link" to="/blogs">
+                  Blogs
                 </CustomLink>
               </li>
 
