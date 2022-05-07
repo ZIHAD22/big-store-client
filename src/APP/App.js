@@ -11,6 +11,7 @@ import SignIn from '../components/SignIn/SignIn'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Loading from '../components/Loading/Loading'
+import RequireAuth from '../components/RequireAuth/RequireAuth'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
