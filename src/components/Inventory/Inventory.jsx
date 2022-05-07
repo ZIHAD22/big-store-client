@@ -30,10 +30,23 @@ const Inventory = () => {
       }
     });
   };
+
+  const handleReStock = (data) => {
+    const updatedData = {
+      currentQuantity: parseInt(product.quantity),
+      stockToAdd: data.stock,
+    };
+    axios.post(url, updatedData).then((res) => {
+      if (res.status === 200) {
+        setRerander(productRerander + 1);
+        reset();
+      }
+    });
+  };
   return (
-    <div className="my-10">
+    <div className="my-10 h-[100vh]">
       <div className="grid grid-cols-2 text-left">
-        <div className="text-right">
+        <div className="mx-auto">
           <img src={product.img} alt="" />
         </div>
         <div>
@@ -41,7 +54,7 @@ const Inventory = () => {
             {product.name}
           </h2>
           <div className="grid grid-cols-2">
-            <div>
+            <div className="mx-auto">
               <h2 className="text-lg text-gray-600">
                 {product.quantity} package /
                 <span className="text-xs">25kg</span>
@@ -58,7 +71,7 @@ const Inventory = () => {
                 </span>
               </h2>
             </div>
-            <div>
+            <div className="mx-4">
               <h3 className="text-xl font-serif">Description:</h3>
               <p className="text-xs text-gray-600">{product.dece}</p>
               <button
@@ -71,19 +84,27 @@ const Inventory = () => {
           </div>
           <hr className="mx-4 my-5" />
           <div>
-            <h1 className="text-3xl text-center font-serif font-medium text-gray-600">
-              Restock the items
-            </h1>
-            <input
-              type="number"
-              className="form-control w-full mt-4 block px-3 py-1.5 text-font-normal text-gray-700 bg-white bg-clip-padding border border-solid rounded transition ease-in-out border-orange-300 outline-hidden m-0 focus:text-gray-800 focus:bg-white focus:outline-orange-400"
-              id="stock"
-              {...register("confirmPassword", { required: "Required" })}
-              placeholder="Restock quantity"
-            />
-            <button className="bg-orange-400 nav-btn font-semibold px-5 py-2 rounded-lg mx-auto block w-1/2 my-2 hover:bg-orange-500 mt-5">
-              Restock
-            </button>
+            <form onSubmit={handleSubmit(handleReStock)}>
+              <h1 className="text-3xl text-center font-serif font-medium text-gray-600">
+                Restock the items
+              </h1>
+              <input
+                type="number"
+                className="form-control w-full mt-4 block px-3 py-1.5 text-font-normal text-gray-700 bg-white bg-clip-padding border border-solid rounded transition ease-in-out border-orange-300 outline-hidden m-0 focus:text-gray-800 focus:bg-white focus:outline-orange-400"
+                id="stock"
+                {...register("stock", {
+                  required: "Required",
+                  valueAsNumber: true,
+                })}
+                placeholder="Restock quantity"
+              />
+              <button
+                type="submit"
+                className="bg-orange-400 nav-btn font-semibold px-5 py-2 rounded-lg mx-auto block w-1/2 my-2 hover:bg-orange-500 mt-5"
+              >
+                Restock
+              </button>
+            </form>
           </div>
         </div>
       </div>
