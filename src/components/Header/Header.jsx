@@ -3,8 +3,17 @@ import CustomLink from "../CustomLink/CustomLink";
 import logo from "../../img/BIG_STORE.png";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../fireBase.init";
+import { signOut } from "firebase/auth";
+import { toast } from "react-toastify";
 
 const Home = () => {
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+    toast.success("Sign Out");
+  };
   return (
     <div>
       <nav
@@ -65,7 +74,7 @@ navbar navbar-expand-lg navbar-light
             <Link to="/">
               <img className="h-[60px]" src={logo} alt="" />
             </Link>
-            <ul className="navbar-nav flex flex-col pl-0 list-style-none ml-auto">
+            <ul className="navbar-nav flex flex-col pl-0 items-center list-style-none ml-auto">
               <li className="nav-item px-2">
                 <CustomLink className="nav-link" to="/">
                   Home
@@ -86,14 +95,26 @@ navbar navbar-expand-lg navbar-light
                   My items
                 </CustomLink>
               </li>
-              <li className="nav-item pr-2 text-white">
-                <CustomLink
-                  className=" bg-orange-400 nav-btn font-semibold px-5 py-3 rounded-lg"
-                  to="/signIn"
-                >
-                  Sign in
-                </CustomLink>
-              </li>
+
+              {user?.uid ? (
+                <>
+                  <button
+                    onClick={handleSignOut}
+                    className=" bg-orange-400 nav-btn font-semibold px-5 py-2 rounded-lg"
+                  >
+                    Sign Out
+                  </button>
+                </>
+              ) : (
+                <li className="nav-item pr-2 text-white">
+                  <CustomLink
+                    className=" bg-orange-400 nav-btn font-semibold px-5 py-3 rounded-lg"
+                    to="/signIn"
+                  >
+                    Sign in
+                  </CustomLink>
+                </li>
+              )}
             </ul>
           </div>
         </div>
