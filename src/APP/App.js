@@ -16,6 +16,7 @@ import Inventory from '../components/Inventory/Inventory'
 import ManageInventories from '../components/ManageInventories/ManageInventories'
 import AddProduct from '../components/AddProduct/AddProduct'
 import MyInventory from '../components/MyInventory/MyInventory'
+import Blogs from '../components/Blogs/Blogs'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
@@ -67,6 +68,7 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path="/blogs" element={<Blogs />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

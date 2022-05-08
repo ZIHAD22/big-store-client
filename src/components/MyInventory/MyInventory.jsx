@@ -21,7 +21,7 @@ const MyInventory = () => {
     }
   };
   return (
-    <div>
+    <div className="min-h-screen">
       <h1 className="text-4xl text-center font-serif font-semibold my-9">
         Manage Inventories
         <span className="font-serif text-[#fb923c]">({myProducts.length})</span>
