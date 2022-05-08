@@ -9,7 +9,9 @@ const useMyProducts = (productRerander) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/my-items?email=${user.email}`)
+      .get(
+        `https://tranquil-anchorage-25651.herokuapp.com/products/my-items?email=${user.email}`,
+      )
       .then((res) => {
         const { data } = res
         setMyProducts(data)

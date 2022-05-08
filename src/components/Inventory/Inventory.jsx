@@ -15,7 +15,7 @@ const Inventory = () => {
   const [productRerander, setRerander] = useState(0);
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  const url = `http://localhost:5000/inventory/${id}`;
+  const url = `https://tranquil-anchorage-25651.herokuapp.com/inventory/${id}`;
   useEffect(() => {
     axios.get(url).then((res) => {
       const { data } = res;

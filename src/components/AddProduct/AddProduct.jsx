@@ -15,11 +15,13 @@ const AddProduct = () => {
   } = useForm();
 
   const handleAddProduct = (data) => {
-    axios.post("http://localhost:5000/products", data).then((res) => {
-      if (res.status === 200) {
-        reset();
-      }
-    });
+    axios
+      .post("https://tranquil-anchorage-25651.herokuapp.com/products", data)
+      .then((res) => {
+        if (res.status === 200) {
+          reset();
+        }
+      });
   };
   return (
     <div>

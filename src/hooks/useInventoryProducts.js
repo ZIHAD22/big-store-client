@@ -5,10 +5,12 @@ const useInventoryProducts = (productRerander) => {
   const [products, setProducts] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/products').then((res) => {
-      const { data } = res
-      setProducts(data)
-    })
+    axios
+      .get('https://tranquil-anchorage-25651.herokuapp.com/products')
+      .then((res) => {
+        const { data } = res
+        setProducts(data)
+      })
   }, [productRerander])
 
   return [products, setProducts]

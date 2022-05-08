@@ -6,9 +6,11 @@ const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/blogs").then((res) => {
-      setBlogs(res.data);
-    });
+    axios
+      .get("https://tranquil-anchorage-25651.herokuapp.com/blogs")
+      .then((res) => {
+        setBlogs(res.data);
+      });
   }, []);
   return (
     <div className="min-h-screen mb-20">

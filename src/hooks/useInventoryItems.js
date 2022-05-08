@@ -5,10 +5,12 @@ const useInventoryItem = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    axios.get('http://localhost:5000/products-home').then((res) => {
-      const { data } = res
-      setItems(data)
-    })
+    axios
+      .get('https://tranquil-anchorage-25651.herokuapp.com/products-home')
+      .then((res) => {
+        const { data } = res
+        setItems(data)
+      })
   }, [])
 
   return [items, setItems]
