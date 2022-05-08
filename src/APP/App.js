@@ -17,6 +17,7 @@ import ManageInventories from '../components/ManageInventories/ManageInventories
 import AddProduct from '../components/AddProduct/AddProduct'
 import MyInventory from '../components/MyInventory/MyInventory'
 import Blogs from '../components/Blogs/Blogs'
+import Testimonial from '../components/Testimonial/Testimonial'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
               <Banner />
               <SpecialItems />
               <Map />
+              <Testimonial />
             </>
           }
         />
