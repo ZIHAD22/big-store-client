@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const Inventory = () => {
   const {
@@ -107,6 +107,14 @@ const Inventory = () => {
             </form>
           </div>
         </div>
+      </div>
+      <div className="my-20">
+        <Link
+          to="/manage-items"
+          className="bg-orange-400 nav-btn  text-center font-semibold px-5 py-2 rounded-lg mx-auto block w-1/3 my-2 hover:bg-orange-500 mt-5"
+        >
+          Manage Inventories
+        </Link>
       </div>
     </div>
   );
