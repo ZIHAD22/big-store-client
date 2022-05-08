@@ -18,6 +18,7 @@ import AddProduct from '../components/AddProduct/AddProduct'
 import MyInventory from '../components/MyInventory/MyInventory'
 import Blogs from '../components/Blogs/Blogs'
 import Testimonial from '../components/Testimonial/Testimonial'
+import ForgetPassword from '../components/ForgetPassword/ForgetPassword'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         />
         <Route path="/signUp" element={<Registration />} />
         <Route path="/signIn" element={<SignIn />} />
+        <Route path="/pass-reset" element={<ForgetPassword />} />
         <Route
           path="/inventory/:id"
           element={

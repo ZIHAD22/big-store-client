@@ -87,7 +87,7 @@ const SignIn = () => {
                 <Link to="/signUp">Not Registered ?</Link>
               </div>
               <div className="text-blue-900 hover:underline text-right">
-                <Link to="pass-reset">Forget Password ?</Link>
+                <Link to="/pass-reset">Forget Password ?</Link>
               </div>
             </div>
             {signInError && (

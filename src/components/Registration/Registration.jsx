@@ -25,7 +25,9 @@ const Registration = () => {
     signUpUser,
     signUpLoading,
     signUpError,
-  ] = useCreateUserWithEmailAndPassword(auth);
+  ] = useCreateUserWithEmailAndPassword(auth, {
+    sendEmailVerification: true,
+  });
 
   const handleRegistration = (data) => {
     const { userName, password, email, confirmPassword, agree } = data;
