@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Loading/Loading";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const SignIn = () => {
   let navigate = useNavigate();
@@ -24,10 +25,9 @@ const SignIn = () => {
   const [signInWithEmailAndPassword, signInUser, signInLoading, signInError] =
     useSignInWithEmailAndPassword(auth);
 
-  const handleSignIn = async (data) => {
-    const { email, password } = data;
-    console.log(email, password);
-    signInWithEmailAndPassword(email, password);
+  const handleSignIn = async (datas) => {
+    const { email, password } = datas;
+    await signInWithEmailAndPassword(email, password);
     reset();
   };
 
