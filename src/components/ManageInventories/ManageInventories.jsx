@@ -9,11 +9,14 @@ const ManageInventories = () => {
   let sNo = 1;
 
   const handleProductDelete = (id) => {
-    axios.delete(`http://localhost:5000/products/${id}`).then((res) => {
-      if (res.status === 200) {
-        setRerander(productRerander + 1);
-      }
-    });
+    const confirmed = window.confirm("Are You Sure ?");
+    if (confirmed) {
+      axios.delete(`http://localhost:5000/products/${id}`).then((res) => {
+        if (res.status === 200) {
+          setRerander(productRerander + 1);
+        }
+      });
+    }
   };
 
   return (
