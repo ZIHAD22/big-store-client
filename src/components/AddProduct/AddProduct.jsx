@@ -25,7 +25,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div className="bg-registration-img h-screen bg-center bg-cover">
+      <div className="bg-registration-img min-h-screen bg-center bg-cover">
         <div className="opacity-90 bg-white h-full">
           <form onSubmit={handleSubmit(handleAddProduct)}>
             <h1 className="text-4xl pt-1 font-serif text-center">
@@ -66,7 +66,7 @@ const AddProduct = () => {
                 </div>
               </div>
               {/* part 2 */}
-              <div className="grid grid-cols-2 gap-x-2">
+              <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-x-2">
                 <div>
                   <input
                     type="text"
@@ -97,7 +97,7 @@ const AddProduct = () => {
                 </div>
               </div>
               {/* part 3 */}
-              <div className="grid grid-cols-2 gap-x-2">
+              <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-x-2">
                 <div>
                   <input
                     type="number"
