@@ -30,7 +30,7 @@ const ForgetPassword = () => {
   return (
     <div className="bg-registration-img h-screen bg-center bg-cover">
       <div className="opacity-90 bg-white h-full">
-        <div className="w-1/2 mx-auto">
+        <div className="md:w-1/2 xs:mx-5 mx-auto">
           <form onSubmit={handleSubmit(handlePasswordReset)}>
             <h1 className="text-center text-4xl text-gray-700 my-6">
               Reset Password
@@ -53,7 +53,7 @@ const ForgetPassword = () => {
               </div> */}
               <button
                 type="submit"
-                className="bg-orange-400 nav-btn font-semibold px-5 py-2 rounded-lg block mx-auto w-1/2 my-2 hover:bg-orange-500"
+                className="bg-orange-400 nav-btn font-semibold px-5 py-2 rounded-lg block mx-auto md:w-1/2 my-2 hover:bg-orange-500"
               >
                 Send Password Reset Email
               </button>
