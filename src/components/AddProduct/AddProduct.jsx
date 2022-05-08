@@ -25,7 +25,7 @@ const AddProduct = () => {
   };
   return (
     <div>
-      <div className="bg-registration-img min-h-screen bg-center bg-cover">
+      <div className="bg-registration-img xs:min-h-screen h-screen bg-center bg-cover">
         <div className="opacity-90 bg-white h-full">
           <form onSubmit={handleSubmit(handleAddProduct)}>
             <h1 className="text-4xl pt-1 font-serif text-center">

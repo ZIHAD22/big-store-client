@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 const useInventoryProducts = (productRerander) => {
   const [products, setProducts] = useState([])
+  const [dataLoading, setDataLoading] = useState(true)
 
   useEffect(() => {
     axios
@@ -10,10 +11,13 @@ const useInventoryProducts = (productRerander) => {
       .then((res) => {
         const { data } = res
         setProducts(data)
+        if (res.status) {
+          setDataLoading(false)
+        }
       })
   }, [productRerander])
 
-  return [products, setProducts]
+  return [products, setProducts, dataLoading]
 }
 
 export default useInventoryProducts

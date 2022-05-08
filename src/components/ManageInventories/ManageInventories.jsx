@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useInventoryProducts from "../../hooks/useInventoryProducts";
 import Table from "../Table/Table";
+import Loading from "../Loading/Loading";
 
 const ManageInventories = () => {
   const [productRerander, setRerander] = useState(0);
-  const [products, setProducts] = useInventoryProducts(productRerander);
+  const [products, setProducts, dataLoading] =
+    useInventoryProducts(productRerander);
   let sNo = 1;
 
   const handleProductDelete = (id) => {
@@ -22,6 +24,10 @@ const ManageInventories = () => {
         });
     }
   };
+
+  if (dataLoading) {
+    return <Loading />;
+  }
 
   return (
     <div>

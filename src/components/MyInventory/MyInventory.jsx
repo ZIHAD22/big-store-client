@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useMyProducts from "../../hooks/useMyProducts";
 import Table from "../Table/Table";
+import Loading from "../Loading/Loading";
 
 const MyInventory = () => {
   const [productRerander, setRerander] = useState(0);
-  const [myProducts, setMyProducts] = useMyProducts(productRerander);
-
-  console.log(myProducts.length);
+  const [myProducts, setMyProducts, dataLoading] =
+    useMyProducts(productRerander);
 
   const handleProductDelete = (id) => {
     const confirmed = window.confirm("Are You Sure ?");
@@ -22,6 +22,11 @@ const MyInventory = () => {
         });
     }
   };
+
+  if (dataLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className="min-h-screen">
       <h1 className="text-4xl text-center font-serif font-semibold my-9">

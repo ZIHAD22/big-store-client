@@ -2,9 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useInventoryItem from "../../hooks/useInventoryItems";
 import InventoryItem from "../InventoryItem/InventoryItem";
+import Loading from "../Loading/Loading";
 
 const SpecialItems = () => {
-  const [items, setItems] = useInventoryItem();
+  const [items, setItems, setDataLoading] = useInventoryItem();
+  if (setDataLoading) {
+    return <Loading />;
+  }
   return (
     <div className="my-10">
       <h1 className="text-center text-4xl font-serif font-medium">

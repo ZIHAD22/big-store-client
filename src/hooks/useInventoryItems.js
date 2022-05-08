@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 
 const useInventoryItem = () => {
   const [items, setItems] = useState([])
+  const [dataLoading, setDataLoading] = useState(true)
 
   useEffect(() => {
     axios
@@ -10,10 +11,13 @@ const useInventoryItem = () => {
       .then((res) => {
         const { data } = res
         setItems(data)
+        if (res.status) {
+          setDataLoading(false)
+        }
       })
   }, [])
 
-  return [items, setItems]
+  return [items, setItems, dataLoading]
 }
 
 export default useInventoryItem

@@ -5,7 +5,8 @@ import auth from '../fireBase.init'
 
 const useMyProducts = (productRerander) => {
   const [myProducts, setMyProducts] = useState([])
-  const [user] = useAuthState(auth)
+  const [user, loading] = useAuthState(auth)
+  const [dataLoading, setDataLoading] = useState(true)
 
   useEffect(() => {
     axios
@@ -15,10 +16,13 @@ const useMyProducts = (productRerander) => {
       .then((res) => {
         const { data } = res
         setMyProducts(data)
+        if (res.status) {
+          setDataLoading(false)
+        }
       })
   }, [productRerander, user?.email])
 
-  return [myProducts, setMyProducts]
+  return [myProducts, setMyProducts, dataLoading]
 }
 
 export default useMyProducts
