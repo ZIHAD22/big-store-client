@@ -12,7 +12,11 @@ const InventoryItem = (props) => {
         <div className="rounded-lg border-2 bg-white max-w-sm">
           <a href="#!" data-mdb-ripple="true" data-mdb-ripple-color="light">
             <div className="p-4">
-              <img className="rounded-t-lg " src={img} alt="" />
+              <img
+                className="rounded-t-lg w-[200px] h-[200px] mx-auto"
+                src={img}
+                alt=""
+              />
             </div>
           </a>
           <div className="px-4 py-2">

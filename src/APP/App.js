@@ -14,6 +14,7 @@ import Loading from '../components/Loading/Loading'
 import RequireAuth from '../components/RequireAuth/RequireAuth'
 import Inventory from '../components/Inventory/Inventory'
 import ManageInventories from '../components/ManageInventories/ManageInventories'
+import AddProduct from '../components/AddProduct/AddProduct'
 // import 'leaflet/dist/leaflet.css'
 
 function App() {
@@ -31,7 +32,22 @@ function App() {
             </>
           }
         />
-        <Route path="/manage-items" element={<ManageInventories />} />
+        <Route
+          path="/manage-items"
+          element={
+            <RequireAuth>
+              <ManageInventories />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/add-item"
+          element={
+            <RequireAuth>
+              <AddProduct />
+            </RequireAuth>
+          }
+        />
         <Route path="/signUp" element={<Registration />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route

@@ -88,7 +88,7 @@ navbar navbar-expand-lg navbar-light
                     </CustomLink>
                   </li>
                   <li className="nav-item pr-2">
-                    <CustomLink className="nav-link" to="/add-items">
+                    <CustomLink className="nav-link" to="/add-item">
                       Add Item
                     </CustomLink>
                   </li>

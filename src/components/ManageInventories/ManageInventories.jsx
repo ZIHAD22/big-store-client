@@ -1,6 +1,7 @@
 import { logDOM } from "@testing-library/react";
 import axios from "axios";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import useInventoryProducts from "../../hooks/useInventoryProducts";
 import "./ManageInventories.css";
 const ManageInventories = () => {
@@ -22,8 +23,16 @@ const ManageInventories = () => {
   return (
     <div>
       <h1 className="text-4xl text-center font-serif font-semibold my-9">
-        Manage Inventories{" "}
+        Manage Inventories
         <span className="font-serif text-[#fb923c]">({products.length})</span>
+        <div>
+          <Link
+            to="/add-item"
+            className="bg-orange-400 nav-btn text-xs font-semibold px-5 py-2 rounded-lg inline-block my-2 hover:bg-orange-500 mt-5"
+          >
+            Add Item
+          </Link>
+        </div>
       </h1>
       <div className="m-10">
         <table className="table">
