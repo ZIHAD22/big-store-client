@@ -1,14 +1,14 @@
-import { logDOM } from "@testing-library/react";
 import axios from "axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import useInventoryProducts from "../../hooks/useInventoryProducts";
+import useMyProducts from "../../hooks/useMyProducts";
 import Table from "../Table/Table";
 
-const ManageInventories = () => {
+const MyInventory = () => {
   const [productRerander, setRerander] = useState(0);
-  const [products, setProducts] = useInventoryProducts(productRerander);
-  let sNo = 1;
+  const [myProducts, setMyProducts] = useMyProducts(productRerander);
+
+  console.log(myProducts.length);
 
   const handleProductDelete = (id) => {
     const confirmed = window.confirm("Are You Sure ?");
@@ -20,12 +20,11 @@ const ManageInventories = () => {
       });
     }
   };
-
   return (
     <div>
       <h1 className="text-4xl text-center font-serif font-semibold my-9">
         Manage Inventories
-        <span className="font-serif text-[#fb923c]">({products.length})</span>
+        <span className="font-serif text-[#fb923c]">({myProducts.length})</span>
         <div>
           <Link
             to="/add-item"
@@ -35,9 +34,9 @@ const ManageInventories = () => {
           </Link>
         </div>
       </h1>
-      <Table products={products} handleProductDelete={handleProductDelete} />
+      <Table products={myProducts} handleProductDelete={handleProductDelete} />
     </div>
   );
 };
 
-export default ManageInventories;
+export default MyInventory;
