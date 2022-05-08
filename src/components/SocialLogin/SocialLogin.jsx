@@ -32,7 +32,7 @@ const SocialLogin = () => {
       <div className="text-center mt-4">
         <button
           onClick={handleGoogleSignIn}
-          className="bg-[#4B7FE0] nav-btn font-semibold px-5 py-2 rounded-lg inline-block w-1/2 my-2 hover:bg-[#4B7FE0]"
+          className="bg-[#4B7FE0] nav-btn font-semibold px-5 py-2 rounded-lg inline-block md:w-1/2 my-2 hover:bg-[#4B7FE0]"
         >
           Login With Google
         </button>

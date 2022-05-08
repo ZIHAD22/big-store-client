@@ -13,7 +13,8 @@ const Banner = () => {
         form-control
         mt-4
         block
-        w-1/3
+        w-full
+        md:w-1/3
         px-3
         py-1.5
         text-base

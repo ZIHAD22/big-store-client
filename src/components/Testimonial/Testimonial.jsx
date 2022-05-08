@@ -6,7 +6,7 @@ const Testimonial = () => {
       <h1 className="text-4xl text-gray-600 text-center font-sans">
         What our clients are saying
       </h1>
-      <div className="grid grid-cols-2 gap-5 my-10 mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 my-10 mb-20">
         <div className="">
           <img
             className="border-4 border-gray-600 rounded-full w-[300px] mx-auto"
@@ -17,8 +17,8 @@ const Testimonial = () => {
             Srabon Hasan
           </h1>
         </div>
-        <div className="my-auto">
-          <p className="w-1/2  text-gray-600 font-sans">
+        <div className="md:my-auto text-center">
+          <p className="w-1/2  text-gray-600 xs:mx-auto font-sans text-center">
             I have been shopping from chaldal for the past few months and i
             amloving the experience. Have been shopping from here and i
             haverecommended my relatives too. They are also happy with the

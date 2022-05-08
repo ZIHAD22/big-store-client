@@ -5,8 +5,8 @@ const BlogItem = (props) => {
   const { blog } = props;
   return (
     <div className="">
-      <div className="grid grid-cols-3 shadow-lg p-2 rounded-lg">
-        <div className="my-auto">
+      <div className="grid xs:grid-cols-1 md:grid-cols-3 shadow-lg p-2 rounded-lg">
+        <div className="md:my-auto xs:mx-auto">
           <img className="w-[200px] h-[300px]" src={blog.img} alt="" />
         </div>
         <div className="col-span-2">

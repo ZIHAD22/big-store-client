@@ -46,7 +46,7 @@ const SignIn = () => {
           <h1 className="text-4xl pt-1 font-serif font-sans text-center">
             Welcome To Here
           </h1>
-          <div className="w-1/3 mx-auto mt-10">
+          <div className="md:w-1/3 xs:mx-4 mx-auto mt-10">
             <h4 className="text-xl text-orange-400 font-serif font-sans text-center">
               Sign In
             </h4>

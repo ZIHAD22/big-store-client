@@ -47,17 +47,17 @@ const Registration = () => {
   }
 
   return (
-    <div className="bg-registration-img h-screen bg-center bg-cover">
+    <div className="bg-registration-img min-h-screen bg-center bg-cover">
       <div className="opacity-90 bg-white h-full">
         <form onSubmit={handleSubmit(handleRegistration)}>
           <h1 className="text-4xl pt-1 font-serif font-sans text-center">
             Great to see you here!
           </h1>
-          <div className="w-1/2 mx-auto mt-10">
+          <div className="md:w-1/2 xs:mx-5 mx-auto mt-10">
             <h4 className="text-xl text-orange-400 font-serif font-sans text-center">
               Registration
             </h4>
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-x-2">
               <input
                 type="text"
                 className="form-control mt-4 block px-3 py-1.5 text-font-normal text-gray-800 bg-white bg-clip-padding border border-solid rounded transition ease-in-out border-orange-300 outline-hidden m-0 focus:text-gray-800 focus:bg-white focus:outline-orange-400"
@@ -72,7 +72,7 @@ const Registration = () => {
               />
             </div>
             {/* part 2 */}
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-x-2">
               <div>
                 <input
                   type="text"
@@ -103,7 +103,7 @@ const Registration = () => {
               </div>
             </div>
             {/* part 3 */}
-            <div className="grid grid-cols-2 gap-x-2">
+            <div className="grid xs:grid-cols-1 md:grid-cols-2 gap-x-2">
               <div>
                 <input
                   type="password"
@@ -135,7 +135,7 @@ const Registration = () => {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 mt-4 items-center">
+            <div className="grid xs:grid-cols-1 md:grid-cols-2 mt-4 items-center">
               <div>
                 <div>
                   <input
