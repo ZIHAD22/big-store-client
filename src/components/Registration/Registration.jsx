@@ -47,7 +47,7 @@ const Registration = () => {
   }
 
   return (
-    <div className="bg-registration-img min-h-screen bg-center bg-cover">
+    <div className="bg-registration-img  md:h-screen bg-center bg-cover">
       <div className="opacity-90 bg-white h-full">
         <form onSubmit={handleSubmit(handleRegistration)}>
           <h1 className="text-4xl pt-1 font-serif font-sans text-center">
