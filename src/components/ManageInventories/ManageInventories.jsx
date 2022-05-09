@@ -9,6 +9,7 @@ import Loading from "../Loading/Loading";
 const ManageInventories = () => {
   const [productRerander, setRerander] = useState(0);
   const [pageCount, setPageCount] = useState(0);
+  const [dataLength, setDataLeangth] = useState(0);
   const [page, setPage] = useState(0);
   const [pagenationLoading, setPagenationLoading] = useState(true);
   const [pageSize, setPageSize] = useState(2);
@@ -21,6 +22,7 @@ const ManageInventories = () => {
   useEffect(() => {
     axios.get("/productCount").then((res) => {
       const count = res.data.count;
+      setDataLeangth(count);
       const pages = Math.ceil(count / pageSize);
       setPageCount(pages);
       if (res.status) {
@@ -48,7 +50,7 @@ const ManageInventories = () => {
     <div>
       <h1 className="text-4xl text-center font-serif font-semibold my-9">
         Manage Inventories
-        <span className="font-serif text-[#fb923c]">({products.length})</span>
+        <span className="font-serif text-[#fb923c]">({dataLength})</span>
         <div>
           <Link
             to="/add-item"

@@ -6,6 +6,7 @@ import auth from "../../fireBase.init";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import Loading from "../Loading/Loading";
+import axios from "../../axios";
 
 const Registration = () => {
   let navigate = useNavigate();
@@ -29,10 +30,12 @@ const Registration = () => {
     sendEmailVerification: true,
   });
 
-  const handleRegistration = (data) => {
+  const handleRegistration = async (data) => {
     const { userName, password, email, confirmPassword, agree } = data;
     if (password === confirmPassword) {
-      createUserWithEmailAndPassword(email, password);
+      await createUserWithEmailAndPassword(email, password);
+      const { data } = await axios.post("/signIn", { email });
+      localStorage.setItem("accessToken", data.accessToken);
     } else {
       toast.warning("Password dosen't match with confirm password ");
     }

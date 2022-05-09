@@ -11,6 +11,7 @@ const MyInventory = () => {
   const [user] = useAuthState(auth);
   const [productRerander, setRerander] = useState(0);
   const [pageCount, setPageCount] = useState(0);
+  const [dataLength, setDataLeangth] = useState(0);
   const [page, setPage] = useState(0);
   const [pagenationLoading, setPagenationLoading] = useState(true);
   const [pageSize, setPageSize] = useState(2);
@@ -23,6 +24,7 @@ const MyInventory = () => {
   useEffect(() => {
     axios.get(`/myProductCount?email=${user?.email}`).then((res) => {
       const count = res.data.count;
+      setDataLeangth(count);
       const pages = Math.ceil(count / pageSize);
       setPageCount(pages);
       if (res.status) {
@@ -50,7 +52,7 @@ const MyInventory = () => {
     <div className="min-h-screen">
       <h1 className="text-4xl text-center font-serif font-semibold my-9">
         Manage Inventories
-        <span className="font-serif text-[#fb923c]">({myProducts.length})</span>
+        <span className="font-serif text-[#fb923c]">({dataLength})</span>
         <div>
           <Link
             to="/add-item"
