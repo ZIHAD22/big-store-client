@@ -51,7 +51,7 @@ const MyInventory = () => {
   return (
     <div className="min-h-screen">
       <h1 className="text-4xl text-center font-serif font-semibold my-9">
-        Manage Inventories
+        Manage My Inventories
         <span className="font-serif text-[#fb923c]">({dataLength})</span>
         <div>
           <Link
