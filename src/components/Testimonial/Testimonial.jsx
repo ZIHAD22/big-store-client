@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from "react";
+import useReview from "../../hooks/useReview";
+import Loading from "../Loading/Loading";
 
 const Testimonial = () => {
+  const [reviews, setReviews, dataLoading] = useReview();
+
+  if (dataLoading) {
+    return <Loading />;
+  }
+
   return (
     <div>
       <h1 className="text-4xl text-gray-600 text-center font-sans">
@@ -14,16 +22,12 @@ const Testimonial = () => {
             alt=""
           />
           <h1 className="text-xl text-gray-600 text-center my-4">
-            Srabon Hasan
+            {reviews.name}
           </h1>
         </div>
         <div className="md:my-auto text-center">
           <p className="w-1/2  text-gray-600 xs:mx-auto font-sans text-center">
-            I have been shopping from chaldal for the past few months and i
-            amloving the experience. Have been shopping from here and i
-            haverecommended my relatives too. They are also happy with the
-            service.The prices are comparatively low and the products are
-            genuine.
+            {reviews.description}
           </p>
         </div>
       </div>
