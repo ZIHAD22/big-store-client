@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '../axios'
 import { signOut } from 'firebase/auth'
 import { useEffect, useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -12,17 +12,13 @@ const useMyProducts = (productRerander) => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios
-      .get(
-        `https://tranquil-anchorage-25651.herokuapp.com/products/my-items?email=${user.email}`,
-      )
-      .then((res) => {
-        const { data } = res
-        setMyProducts(data)
-        if (res.status) {
-          setDataLoading(false)
-        }
-      })
+    axios.get(`products/my-items?email=${user.email}`).then((res) => {
+      const { data } = res
+      setMyProducts(data)
+      if (res.status) {
+        setDataLoading(false)
+      }
+    })
   }, [productRerander, user?.email])
 
   return [myProducts, setMyProducts, dataLoading]

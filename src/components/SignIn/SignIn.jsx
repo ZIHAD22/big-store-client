@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import Loading from "../Loading/Loading";
 import { async } from "@firebase/util";
 import { toast } from "react-toastify";
-import axios from "axios";
+import axios from "../../axios";
 
 const SignIn = () => {
   let navigate = useNavigate();

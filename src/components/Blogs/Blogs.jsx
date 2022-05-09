@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import React, { useEffect, useState } from "react";
 import BlogItem from "../BlogItem/BlogItem";
 import Loading from "../Loading/Loading";
@@ -8,14 +8,12 @@ const Blogs = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios
-      .get("https://tranquil-anchorage-25651.herokuapp.com/blogs")
-      .then((res) => {
-        setBlogs(res.data);
-        if (res.status) {
-          setLoading(false);
-        }
-      });
+    axios.get("blogs").then((res) => {
+      setBlogs(res.data);
+      if (res.status) {
+        setLoading(false);
+      }
+    });
   }, []);
 
   if (loading) {

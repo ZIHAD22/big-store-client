@@ -1,5 +1,5 @@
 import { logDOM } from "@testing-library/react";
-import axios from "axios";
+import axios from "../../axios";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useInventoryProducts from "../../hooks/useInventoryProducts";
@@ -15,13 +15,11 @@ const ManageInventories = () => {
   const handleProductDelete = (id) => {
     const confirmed = window.confirm("Are You Sure ?");
     if (confirmed) {
-      axios
-        .delete(`https://tranquil-anchorage-25651.herokuapp.com/products/${id}`)
-        .then((res) => {
-          if (res.status === 200) {
-            setRerander(productRerander + 1);
-          }
-        });
+      axios.delete(`products/${id}`).then((res) => {
+        if (res.status === 200) {
+          setRerander(productRerander + 1);
+        }
+      });
     }
   };
 

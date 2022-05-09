@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -15,13 +15,11 @@ const AddProduct = () => {
   } = useForm();
 
   const handleAddProduct = (data) => {
-    axios
-      .post("https://tranquil-anchorage-25651.herokuapp.com/products", data)
-      .then((res) => {
-        if (res.status === 200) {
-          reset();
-        }
-      });
+    axios.post("products", data).then((res) => {
+      if (res.status === 200) {
+        reset();
+      }
+    });
   };
   return (
     <div>

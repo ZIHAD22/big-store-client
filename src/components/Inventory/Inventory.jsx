@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useParams } from "react-router-dom";
@@ -15,7 +15,7 @@ const Inventory = () => {
   const [productRerander, setRerander] = useState(0);
   const { id } = useParams();
   const [product, setProduct] = useState({});
-  const url = `https://tranquil-anchorage-25651.herokuapp.com/inventory/${id}`;
+  const url = `inventory/${id}`;
   useEffect(() => {
     axios.get(url).then((res) => {
       const { data } = res;
