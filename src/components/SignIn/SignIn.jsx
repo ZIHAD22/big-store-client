@@ -5,8 +5,6 @@ import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../fireBase.init";
 import { useForm } from "react-hook-form";
 import Loading from "../Loading/Loading";
-import { async } from "@firebase/util";
-import { toast } from "react-toastify";
 import axios from "../../axios";
 
 const SignIn = () => {
@@ -17,7 +15,6 @@ const SignIn = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
     reset,
   } = useForm();
@@ -25,9 +22,11 @@ const SignIn = () => {
   const [signInWithEmailAndPassword, signInUser, signInLoading, signInError] =
     useSignInWithEmailAndPassword(auth);
 
-  const handleSignIn = async (datas) => {
-    const { email, password } = datas;
+  const handleSignIn = async (fromData) => {
+    const { email, password } = fromData;
     await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("/signIn", { email });
+    localStorage.setItem("accessToken", data.accessToken);
     reset();
   };
 
@@ -43,11 +42,11 @@ const SignIn = () => {
     <div className="bg-registration-img md:h-screen bg-center bg-cover">
       <div className="opacity-90 bg-white h-full">
         <form onSubmit={handleSubmit(handleSignIn)}>
-          <h1 className="text-4xl pt-1 font-serif font-sans text-center">
+          <h1 className="text-4xl pt-1 font-serif  text-center">
             Welcome To Here
           </h1>
           <div className="md:w-1/3 xs:mx-4 mx-auto mt-10">
-            <h4 className="text-xl text-orange-400 font-serif font-sans text-center">
+            <h4 className="text-xl text-orange-400 font-serif  text-center">
               Sign In
             </h4>
             <div className="grid grid-cols-1 gap-x-2">

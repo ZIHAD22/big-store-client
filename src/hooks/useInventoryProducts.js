@@ -1,19 +1,19 @@
 import axios from '../axios'
 import { useEffect, useState } from 'react'
 
-const useInventoryProducts = (productRerander) => {
+const useInventoryProducts = (productRerander, page, pageSize) => {
   const [products, setProducts] = useState([])
   const [dataLoading, setDataLoading] = useState(true)
 
   useEffect(() => {
-    axios.get('products').then((res) => {
+    axios.get(`products?page=${page}&size=${pageSize}`).then((res) => {
       const { data } = res
       setProducts(data)
       if (res.status) {
         setDataLoading(false)
       }
     })
-  }, [productRerander])
+  }, [productRerander, page, pageSize])
 
   return [products, setProducts, dataLoading]
 }
